@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "443508364453",
+    "project_id": "lgsmatematik-ff899",
+    "storage_bucket": "lgsmatematik-ff899.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443508364453:android:6a32cfa5a27c25532ea94c",
+        "android_client_info": {
+          "package_name": "com.example.lgs_matematik"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443508364453-0d8k3afhahlbt5025alcedm9helphnln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWiQG4wMwo_9xCeIz3l3ZprDNWFIQrZZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443508364453-0d8k3afhahlbt5025alcedm9helphnln.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "443508364453-pgscde3mk8hp0h4210f1k27374khht7q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.burhanh.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
