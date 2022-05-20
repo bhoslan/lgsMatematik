@@ -4,6 +4,7 @@ import 'package:lgsmatematik/screens/home_page.dart';
 import 'package:lgsmatematik/screens/register_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'forgot_password.dart';
+import 'homme_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class _SignUpPageState extends State<SignUpPage> {
         .then((value) {
       Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (_) => HomePage()),
+          MaterialPageRoute(builder: (_) => HommePage()),
           (Route<dynamic> route) => false);
     });
   }

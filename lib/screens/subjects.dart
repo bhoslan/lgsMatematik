@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lgsmatematik/screens/carpanlar_katlar_ka.dart';
 
 class Subjects extends StatefulWidget {
   const Subjects({Key? key}) : super(key: key);
@@ -47,7 +48,12 @@ class _SubjectsState extends State<Subjects> {
                     elevation: 6,
                     backgroundColor: Colors.amberAccent),
                 autofocus: true,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CarpanlarKatlarKa()));
+                },
                 child: const Text(
                   "1. Ünite : Çarpanlar ve Katlar",
                   style: TextStyle(
