@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lgsmatematik/screens/carpanlar_katlar_ka.dart';
+import 'package:lgsmatematik/screens/tests_page.dart';
+import 'package:lgsmatematik/screens/true_false_page1.dart';
 
 class Subjects extends StatefulWidget {
   const Subjects({Key? key}) : super(key: key);
@@ -52,7 +54,7 @@ class _SubjectsState extends State<Subjects> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => CarpanlarKatlarKa()));
+                          builder: (context) => TrueFalsePage1()));
                 },
                 child: const Text(
                   "1. Ünite : Çarpanlar ve Katlar",

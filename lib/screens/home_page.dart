@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lgsmatematik/screens/sign_up_page.dart';
 import 'package:lgsmatematik/screens/subjects.dart';
+import 'package:lgsmatematik/screens/tests_page.dart';
+import 'package:lgsmatematik/screens/true_false_page1.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
@@ -71,7 +73,7 @@ class _HomePageState extends State<HomePage> {
             alignment: Alignment.center,
             child: TextButton.icon(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const Subjects()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> TestsPage()));
                 },
                 icon: const Icon(Icons.question_mark),
                 label: const Text(
@@ -90,7 +92,9 @@ class _HomePageState extends State<HomePage> {
           Container(
             alignment: Alignment.center,
             child: TextButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Subjects()));
+                },
                 icon: const Icon(Icons.menu_book),
                 label: const Text(
                   "DOĞRU-YANLIŞ",

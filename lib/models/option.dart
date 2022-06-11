@@ -1,11 +1,12 @@
 class Option{
  final String code;
  final String text;
- final bool isCorrect;
+ final int? answerOption;
+
 
   Option({
   required this.code,
   required this.text,
-  required this.isCorrect,
+  required this.answerOption,
 });
 }

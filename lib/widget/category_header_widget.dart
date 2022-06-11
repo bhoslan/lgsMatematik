@@ -19,18 +19,20 @@ class CategoryHeaderWidget extends StatelessWidget {
     child: Container(
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: category.backgroundColor,
+        gradient: LinearGradient(
+          colors: [Colors.orange, Colors.purple],
+        ),
         borderRadius: BorderRadius.circular(15),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          FaIcon(category.icon, color: Colors.white, size: 36),
+          FaIcon(category.icon, color: Colors.orange, size: 36),
           const SizedBox(height: 12),
           Text(
             category.categoryName,
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.purple,
               fontWeight: FontWeight.bold,
               fontSize: 20,
             ),

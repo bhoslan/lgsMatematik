@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/option.dart';
 import '../models/question.dart';
-import '../utils.dart';
+import '../utils/utils.dart';
 class OptionsWidget extends StatelessWidget {
   final Question question;
   final ValueChanged<Option> onClickedOption;
@@ -76,8 +76,12 @@ class OptionsWidget extends StatelessWidget {
 
     if (!isSelected) {
       return Colors.grey.shade200;
-    } else {
-      return option.isCorrect ? Colors.green : Colors.red;
-    }
+    } else if(option.answerOption == question.answerOption){
+      return Colors.green;
+      //return option.answerOption  ? Colors.green : Colors.red;
+    }else {
+      return Colors.red;
+    };
   }
+
 }
