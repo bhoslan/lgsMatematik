@@ -1,23 +1,19 @@
-import 'package:get/get.dart';
 import 'package:lgsmatematik/models/option.dart';
 import 'package:lgsmatematik/models/question.dart';
 
-bool _correctAnswer=false;
-int _numOfCorrectAnswer = 0;
-
 final test1 = [
   Question(
-      text: "12 sayısının çarpanları kaç tanedir?",
-      solution: "1,2,3,4,6 ve 12 olmak üzere 6 tanedir.",
-      options: [
-        Option(code: "A-", text: "2", answerOption: 1),
-        Option(code: "B-", text: "3", answerOption: 2),
-        Option(code: "C-", text: "4", answerOption: 3),
-        Option(code: "D-", text: "6", answerOption: 4),
-      ],
-      answerOption: 4,
-    id:1,
-      ),
+    text: "12 sayısının çarpanları kaç tanedir?",
+    solution: "1,2,3,4,6 ve 12 olmak üzere 6 tanedir.",
+    options: [
+      Option(code: "A-", text: "2", answerOption: 1),
+      Option(code: "B-", text: "3", answerOption: 2),
+      Option(code: "C-", text: "4", answerOption: 3),
+      Option(code: "D-", text: "6", answerOption: 4),
+    ],
+    answerOption: 4,
+    id: 1,
+  ),
   Question(
     text: "72 ve 60 sayılarının doğal sayı çarpanlarının kaç tanesi ortaktır?",
     solution: "En büyük ortak bölenleri 12'dir. 12'nin 6 tane böleni vardır.",
@@ -28,7 +24,7 @@ final test1 = [
       Option(code: "D-", text: "4", answerOption: 4),
     ],
     answerOption: 1,
-    id:2,
+    id: 2,
   ),
   Question(
     text: "240 sayısının asal çarpanlarının toplamı kaçtır?",
@@ -40,10 +36,11 @@ final test1 = [
       Option(code: "D-", text: "20", answerOption: 4),
     ],
     answerOption: 2,
-    id:3,
+    id: 3,
   ),
   Question(
-    text: "B7 sayısı iki basamaklı bir asal sayı olduğuna göre B yerine kaç rakam yazılabilir?",
+    text:
+        "B7 sayısı iki basamaklı bir asal sayı olduğuna göre B yerine kaç rakam yazılabilir?",
     solution: "{1,3,4,6,9} olmak üzere 5 rakam yazılabilir.",
     options: [
       Option(code: "A-", text: "5", answerOption: 1),
@@ -52,7 +49,7 @@ final test1 = [
       Option(code: "D-", text: "8", answerOption: 4),
     ],
     answerOption: 1,
-    id:4,
+    id: 4,
   ),
   Question(
     text: "Asal çarpanları 2 ve 5 olan 100'den küçük kaç sayı vardır??",
@@ -64,16 +61,6 @@ final test1 = [
       Option(code: "D-", text: "8", answerOption: 4),
     ],
     answerOption: 1,
-    id:5,
+    id: 5,
   ),
 ];
-
-RxInt dogruSayisi(){
-  for(int i=0 ; i<=test1.length ; i++){
-  if(test1[i].selectedOption == test1[i].answerOption){
-    _numOfCorrectAnswer ++;
-  }else{
-    _numOfCorrectAnswer = _numOfCorrectAnswer;
-  }}
-  return _numOfCorrectAnswer.obs;
-}

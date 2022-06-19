@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lgsmatematik/data/user.dart';
 import 'package:lgsmatematik/screens/edit_profile_page.dart';
 import 'package:lgsmatematik/utils/user_preferences.dart';
-
 import '../widget/appbar_widget.dart';
 import '../widget/profile_widget.dart';
 
@@ -16,16 +15,16 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    final user = UserPreferences.myUser;
+    const user = UserPreferences.myUser;
     return Scaffold(
       appBar: buildAppBar(context),
       body: ListView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: [
           ProfileWidget(
             imagePath : user.imagePath,
             onClicked : () async {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>EditProfilePage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const EditProfilePage()));
             }
           ),
           const SizedBox(height: 24,),
@@ -61,7 +60,7 @@ class _ProfilePageState extends State<ProfilePage> {
           style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
           const SizedBox(height: 16),
           Text(user.about,
-          style: TextStyle(fontSize: 16,height: 1.4),)
+          style: const TextStyle(fontSize: 16,height: 1.4),)
           ],
 
 

@@ -1,12 +1,13 @@
 import 'package:lgsmatematik/data/user.dart';
 
 class UserPreferences {
+
   static const myUser = User(
       imagePath:
-          'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=333&q=80',
-      name: "Ayşe Eren",
-      email: "ayseeren@gmail.com",
-      about: "Merhaba. Ben Bilecik Atatürk İlköğretim okulunda 8. sınıfta okuyorum.",
+          "https://cdn.pixabay.com/photo/2017/11/10/05/48/user-2935527_960_720.png",
+      name: "Burhan Hoşlan",
+      email: "bhoslan@gmail.com",
+      about: "Kullanıcı hakkında genel bilgilerin yazıldığı bölüm.",
       isDarkMode: false
   );
 }

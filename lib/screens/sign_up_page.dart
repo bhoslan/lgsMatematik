@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lgsmatematik/screens/home_page.dart';
 import 'package:lgsmatematik/screens/register_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'forgot_password.dart';
@@ -24,8 +23,8 @@ class _SignUpPageState extends State<SignUpPage> {
         .then((value) {
       Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (_) => HommePage()),
-          (Route<dynamic> route) => false);
+          MaterialPageRoute(builder: (_) => const HommePage()),
+              (Route<dynamic> route) => false);
     });
   }
 
@@ -34,7 +33,7 @@ class _SignUpPageState extends State<SignUpPage> {
       title: TextField(
         controller: email,
         keyboardType: TextInputType.emailAddress,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
             prefixIcon: Icon(
               Icons.email,
               color: Colors.red,
@@ -73,11 +72,11 @@ class _SignUpPageState extends State<SignUpPage> {
         children: [
           _ePostaWidget(),
           Container(
-            margin: EdgeInsets.only(top: 5, left: 20, right: 20),
+            margin: const EdgeInsets.only(top: 5, left: 20, right: 20),
             color: Colors.white54,
             width: 400,
             height: 20,
-            child: Text(
+            child: const Text(
               "E-Posta",
               style: TextStyle(fontWeight: FontWeight.w400),
             ),
@@ -86,7 +85,7 @@ class _SignUpPageState extends State<SignUpPage> {
             title: TextField(
               controller: password,
               obscureText: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   prefixIcon: Icon(
                     Icons.lock_outline,
                   ),
@@ -94,13 +93,13 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 5, left: 20, right: 20),
+            margin: const EdgeInsets.only(top: 5, left: 20, right: 20),
             color: Colors.white,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Şifre", style: TextStyle(fontWeight: FontWeight.w400)),
-                //Text("Şifremi unuttum",style: TextStyle(fontWeight: FontWeight.bold)),
+                const Text(
+                    "Şifre", style: TextStyle(fontWeight: FontWeight.w400)),
                 TextButton(
                     onPressed: () {
                       Navigator.push(
@@ -109,7 +108,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             builder: (context) => ForgotPasswordPage()),
                       );
                     },
-                    child: Text("Şifremi unuttum",
+                    child: const Text("Şifremi unuttum",
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           decoration: TextDecoration.underline,
@@ -124,12 +123,12 @@ class _SignUpPageState extends State<SignUpPage> {
                 onPressed: () {
                   signUp();
                 },
-                child: Text(
+                child: const Text(
                   "Giriş yap",
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.black),
                 )),
-            margin: EdgeInsets.only(top: 30),
+            margin: const EdgeInsets.only(top: 30),
             width: 150,
             height: 60,
             decoration: BoxDecoration(
@@ -139,11 +138,11 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
           Container(
             color: Colors.white,
-            margin: EdgeInsets.only(top: 0),
+            margin: const EdgeInsets.only(top: 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Hesabınız yok mu?"),
+                const Text("Hesabınız yok mu?"),
                 TextButton(
                     onPressed: () {
                       Navigator.push(
@@ -151,7 +150,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         MaterialPageRoute(builder: (context) => RegisterPage()),
                       );
                     },
-                    child: Text("Kayıt ol",
+                    child: const Text("Kayıt ol",
                         style: TextStyle(
                             decoration: TextDecoration.underline,
                             fontWeight: FontWeight.bold,
@@ -161,30 +160,21 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
           Container(
             color: Colors.white,
-            margin: EdgeInsets.only(top: 0),
+            margin: const EdgeInsets.only(top: 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextButton(
-                    onPressed: () {
-                      _misafirGirisi();
-                    },
-                    child: Text("Misafir Girişi",
-                        style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black))),
-              ],
             ),
           )
         ],
       ),
     );
   }
-
-  void _misafirGirisi() async {
-    UserCredential result = await FirebaseAuth.instance.signInAnonymously();
-    print("Oturum açan user id : " + result.user!.uid.toString());
-  }
 }
+  /*void _misafirGirisi() async {
+    UserCredential result = await FirebaseAuth.instance.signInAnonymously();
+    if (kDebugMode) {
+      print("Oturum açan user id : " + result.user!.uid.toString());
+    }
+  }
+}*/
 //automaticallyImplyLeading: false,

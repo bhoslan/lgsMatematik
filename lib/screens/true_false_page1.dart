@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-
 import '../data/trueFalseQuestions1.dart';
 
 TrueFalseQuestions1 trueFalseQuestions = TrueFalseQuestions1();
@@ -56,76 +54,84 @@ class _TrueFalsePage1State extends State<TrueFalsePage1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: (){Get.back();}, icon: Icon(Icons.arrow_back),color: Colors.black,),
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: const Icon(Icons.arrow_back),
+          color: Colors.black,
+        ),
         backgroundColor: Colors.white54,
         elevation: 0,
       ),
-    body :SafeArea(
-      child: Container(
-        color: Colors.white,
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                flex: 6,
-                child: Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: Center(
-                    child: Text(
-                      trueFalseQuestions.getQuestion(),
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        decoration: TextDecoration.none,
-                        color: Colors.black,
-                        fontSize: 25.0,
+      body: SafeArea(
+        child: Container(
+          color: Colors.white,
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  flex: 6,
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Center(
+                      child: Text(
+                        trueFalseQuestions.getQuestion(),
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          decoration: TextDecoration.none,
+                          color: Colors.black,
+                          fontSize: 25.0,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: TextButton(
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.green)),
-                      child: const Text(
-                        'Doğru',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24.0,
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: TextButton(
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.green)),
+                        child: const Text(
+                          'Doğru',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24.0,
+                          ),
                         ),
-                      ),
-                      onPressed: () {
-                        checkAnswer(true);
-                      }),
+                        onPressed: () {
+                          checkAnswer(true);
+                        }),
+                  ),
                 ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: TextButton(
-                      style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(Colors.red)),
-                      child: const Text(
-                        'Yanlış',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24.0,
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: TextButton(
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.red)),
+                        child: const Text(
+                          'Yanlış',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24.0,
+                          ),
                         ),
-                      ),
-                      onPressed: () {
-                        checkAnswer(false);
-                      }),
+                        onPressed: () {
+                          checkAnswer(false);
+                        }),
+                  ),
                 ),
-              ),
-              Row(
-                children: scoreKeeper,
-              )
-            ]),
+                Row(
+                  children: scoreKeeper,
+                )
+              ]),
+        ),
       ),
-    ),);
+    );
   }
 }

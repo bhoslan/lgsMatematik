@@ -40,9 +40,9 @@ class QuestionsWidget extends StatelessWidget {
             const SizedBox(height: 32),
             Text(
               question.text,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             Expanded(
               child: OptionsWidget(
                 question: question,

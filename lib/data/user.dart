@@ -1,6 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
-
 class User{
+
   final String imagePath;
   final String name;
   final String email;

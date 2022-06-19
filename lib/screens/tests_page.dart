@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../data/categories.dart';
 import '../widget/category_detail_widget.dart';
 import '../widget/category_header_widget.dart';
 import 'category_page.dart';
 
 class TestsPage extends StatelessWidget {
+  const TestsPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) => Scaffold(
         body: ListView(
@@ -23,7 +21,7 @@ class TestsPage extends StatelessWidget {
         ),
       );
 
-  Widget buildCategories() => Container(
+  Widget buildCategories() => SizedBox(
         height: 300,
         child: GridView(
           primary: false,
@@ -49,7 +47,7 @@ class TestsPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          Container(
+          SizedBox(
             height: 240,
             child: ListView(
               physics: const BouncingScrollPhysics(),

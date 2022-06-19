@@ -1,12 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lgsmatematik/screens/sign_up_page.dart';
-import 'package:lgsmatematik/screens/subjects.dart';
-import 'package:lgsmatematik/screens/tests_page.dart';
 import 'package:lgsmatematik/screens/true_false_page1.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class TrueFalsePage extends StatefulWidget {
+  const TrueFalsePage({Key? key}) : super(key: key);
+
   @override
   State<TrueFalsePage> createState() => _TrueFalsePageState();
 }
@@ -48,7 +45,7 @@ class _TrueFalsePageState extends State<TrueFalsePage> {
             child: TextButton.icon(
               //autofocus: true,
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>TrueFalsePage1()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const TrueFalsePage1()));
                 },
                 icon: const Icon(Icons.menu_book),
                 label: const Text(
@@ -56,11 +53,11 @@ class _TrueFalsePageState extends State<TrueFalsePage> {
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.black),
                 )),
-            margin: EdgeInsets.only(top: 30),
+            margin: const EdgeInsets.only(top: 30),
             width: 150,
             height: 60,
             decoration: BoxDecoration(
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                 colors: [Colors.orange, Colors.purple],
               ),
               borderRadius: BorderRadius.circular(30),

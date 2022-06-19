@@ -49,9 +49,9 @@ class _CategoryPageState extends State<CategoryPage> {
           ),
         ),
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(80),
+          preferredSize: const Size.fromHeight(80),
           child: Container(
-            padding: EdgeInsets.symmetric(vertical: 16),
+            padding: const EdgeInsets.symmetric(vertical: 16),
             child: QuestionNumbersWidget(
               questions: widget.category.questions,
               question: question,

@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
+  const ForgotPasswordPage({Key? key}) : super(key: key);
+
   @override
   State<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
 }
@@ -41,54 +43,50 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           ),
           elevation: 0,
         ),
-        body: Container(
-          /*padding: EdgeInsets.all(20.0),
-      margin: EdgeInsets.all(20.0),*/
-          child: Column(
-            children: [
-              ListTile(
-                title: TextField(
-                  controller: email,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
-                      prefixIcon: Icon(
-                        Icons.email,
-                        color: Colors.red,
-                      ),
-                      hintText: "E-Posta"),
-                ),
+        body: Column(
+          children: [
+            ListTile(
+              title: TextField(
+                controller: email,
+                keyboardType: TextInputType.emailAddress,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.email,
+                      color: Colors.red,
+                    ),
+                    hintText: "E-Posta"),
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 5, left: 20, right: 20),
-                color: Colors.white54,
-                width: 400,
-                height: 20,
-                child: const Text(
-                  "E-Posta",
-                  style: TextStyle(fontWeight: FontWeight.w400),
-                ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 5, left: 20, right: 20),
+              color: Colors.white54,
+              width: 400,
+              height: 20,
+              child: const Text(
+                "E-Posta",
+                style: TextStyle(fontWeight: FontWeight.w400),
               ),
-              Container(
-                child: TextButton(
-                    onPressed: () {
-                        sendPassword();
-                        Navigator.pop(context);
-                      },
-                    child: const Text(
-                      "Sıfırla",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.black),
-                    )),
-                margin: EdgeInsets.only(top: 30),
-                width: 150,
-                height: 60,
-                decoration: BoxDecoration(
-                  color: Colors.amber,
-                  borderRadius: BorderRadius.circular(30),
-                ),
+            ),
+            Container(
+              child: TextButton(
+                  onPressed: () {
+                      sendPassword();
+                      Navigator.pop(context);
+                    },
+                  child: const Text(
+                    "Sıfırla",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.black),
+                  )),
+              margin: const EdgeInsets.only(top: 30),
+              width: 150,
+              height: 60,
+              decoration: BoxDecoration(
+                color: Colors.amber,
+                borderRadius: BorderRadius.circular(30),
               ),
-            ],
-          ),
+            ),
+          ],
         ));
   }
 }

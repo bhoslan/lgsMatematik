@@ -9,7 +9,7 @@ class TextFieldWidget extends StatefulWidget {
   final String label;
   final String text;
   final ValueChanged<String> onSubmitted;
-   TextFieldWidget({
+   const TextFieldWidget({
     Key? key,
      this.maxLines=1,
     required this.label,
@@ -44,9 +44,9 @@ void dispose(){
     children: [
       Text(
         widget.label,
-        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
+        style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
       ),
-      SizedBox(height: 8,),
+      const SizedBox(height: 8,),
       TextField(
         onSubmitted: (value){},
         controller: controller,
